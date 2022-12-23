@@ -5,7 +5,6 @@ import torch
 from flask import Flask,request,make_response
 from werkzeug.exceptions import BadRequest
 import os
-import  cv2
 
 from .utils.util  import take_pic
 
@@ -35,6 +34,9 @@ def create_app():
         print("Processed")
         return results
 
+    @app.route('/', methods=['GET'])
+    def index():
+        return r"<p>hi it works!</p>"
 
     @app.route('/', methods=['POST'])
     def predict():
