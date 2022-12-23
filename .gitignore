@@ -108,3 +108,5 @@ dist
 venv
 yolov5
 *.jpg
+
+__pycache__

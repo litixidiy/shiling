@@ -9,7 +9,6 @@ import os
 from .utils.util  import take_pic
 
 def create_app():
-    
     app = Flask(__name__)
 
     for r, d, f in os.walk("./models_train"):
@@ -40,7 +39,6 @@ def create_app():
 
     @app.route('/', methods=['POST'])
     def predict():
-
         file = extract_img(request)
         img_bytes = file.read()
         # choice of the model
@@ -58,7 +56,6 @@ def create_app():
             response.headers['Content-Type'] = 'image/jpeg'
         # return your image with boxes and labels
 
-
     def extract_img(request):
         # checking if image uploaded is valid
         if 'file' not in request.files:
@@ -71,7 +68,6 @@ def create_app():
     #take_pic()
     path = 'det/test.jpg'
     results = get_prediction_test(path,model)
-
     print(results.pandas().xyxy[0])
 
     results.render()
