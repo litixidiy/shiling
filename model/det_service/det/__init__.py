@@ -33,7 +33,7 @@ def create_app():
         print("Processed")
         return results
 
-    @app.route('/', methods=['GET'])
+    @app.route('/test', methods=['GET'])
     def index():
         return r"<p>hi it works!</p>"
 
